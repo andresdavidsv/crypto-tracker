@@ -21,8 +21,7 @@ import {colors} from '../resources/color';
 export const CoinsScreen = props => {
   // eslint-disable-next-line no-unused-vars
   const [coins, setCoins] = useCoins();
-  // eslint-disable-next-line no-unused-vars
-  const [filteredCoins, setFilteredCoins] = useState([]);
+  let [filteredCoins, setFilteredCoins] = useState([]);
 
   // Handling the button press event
   const handlePress = coin => {
@@ -53,9 +52,6 @@ export const CoinsScreen = props => {
       ) : (
         <ActivityIndicator style={styles.loader} color="#000" size="large" />
       )}
-      <Pressable style={styles.btn} onPress={handlePress}>
-        <Text style={styles.btnText}>Go to detail</Text>
-      </Pressable>
     </View>
   );
 };
